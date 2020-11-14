@@ -42,17 +42,16 @@ export default function Home() {
         <div className="note-wrapper">
             {
                 notes.map(note=> (
-                    <div className="card" key={note._id}>
-                        <div className="title-class container">
-                            <h4 title="{note.title}" >{note.title}</h4>
-                        </div>
-                        <div className="text-wrapper container">
-                            <p>{note.content}</p>
-                        </div>
-                        <p className="date container">{format(note.date)}</p>
-                        <div className="card-footer container">
-                           {note.name}
+                    <div className="card" key={note._id}>    
+                        <h1 title="{note.title}" >{note.title}</h1>
+                        <textarea className="notecontent">{note.content}</textarea>
+                        <div className="footernote">
+                            <div className="date" >
+                                <p >{format(note.date)}</p>
+                            </div>
+                            <div className="noteedit">   
                             <Link className=" editcl" to={`edit/${note._id}`}>Edit</Link>
+                            </div>
                         </div>
                         <button className="close" onClick={()=>deleteNote(note._id)}>X</button>
                     </div>

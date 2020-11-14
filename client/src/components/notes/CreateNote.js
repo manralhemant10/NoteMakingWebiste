@@ -39,16 +39,12 @@ export default function CreateNote() {
 
 
     return(
-        <div className="create-note">
-            <form onSubmit={createNote}>
-                <div >
-                    <input type="text" className="createnoteele" value={note.title} placeholder="Title" id="title" name="title" required onChange={onChangeInput}/>
-                </div>
-                <div >
-                    <textarea type="text" className="createnoteele" placeholder="Type your note here...." value={note.content} id="content" name="content" required rows="10" onChange={onChangeInput}/>
-                </div>
-                <div >
-                    <input type="date" className="createnoteele" id="date" name="date" required onChange={onChangeInput}/>
+        <div className="createnote">
+            <form className="createnoteform" onSubmit={createNote}>
+                <input type="text" className="createnoteele" value={note.title} placeholder="Title" id="title" name="title" required onChange={onChangeInput}/>
+                <textarea type="text" className="createnoteele" placeholder="Type your note here...." value={note.content} id="content" name="content" required rows="10" onChange={onChangeInput}/>
+                <div className="datecreate">
+                <input  type="date" className="createnoteele" id="date" name="date" required onChange={onChangeInput}/>
                 </div>
                 <button className="createsave" type="submit">Save</button>
             </form>

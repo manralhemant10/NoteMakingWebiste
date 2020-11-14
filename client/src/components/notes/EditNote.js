@@ -58,17 +58,13 @@ export default function EditNote({match}) {
 
 
     return(
-        <div className="edit-note">
-            <form onSubmit={editNote}>
-                <div>
+        <div className="createnote">
+            <form className="createnoteform" onSubmit={editNote}>
                     <input type="text" value={note.title} className="editnoteele" id="title" name="title" required onChange={onChangeInput}/>
-                </div>
-                <div>
                     <textarea type="text" value={note.content} className="editnoteele" id="content" name="content" required rows="10" onChange={onChangeInput}/>
-                </div>
-                <div>
-                    <input type="date" id="date" name="date" className="editnoteele" required onChange={onChangeInput}/>
-                </div>
+                    <div className="datecreate">
+                        <input type="date" id="date" name="date" className="editnoteele" required onChange={onChangeInput}/>
+                    </div>
                 <button className="createsave" type="submit">Save</button>
             </form>
         </div>

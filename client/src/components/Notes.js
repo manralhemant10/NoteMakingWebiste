@@ -3,20 +3,20 @@ import Header from './notes/Nav'
 import Home from './notes/Home'
 import CreateNote from './notes/CreateNote'
 import EditNote from './notes/EditNote'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
 export default function Notes({setIsLogin}){
     return(
-        <Router>
+        <>
         <div className="notes-page">
             <Header setIsLogin={setIsLogin}/>
-            <section>
-                <Route path="/" component={Home} exact/>
-                <Route path="/create" component={CreateNote} exact/>
-                <Route path="/edit/:id" component={EditNote} exact/>
-            </section>
-            
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/home" component={Home} />
+                    <Route path="/create" component={CreateNote} />
+                    <Route path="/edit/:id" component={EditNote} />
+                </Switch>
         </div>
-        </Router>
+        </>
     )
 }
